@@ -5,4 +5,3 @@ bindgen \
     --default-enum-style=rust \
     wrapper.h \
     > src/fftw.rs
-    
