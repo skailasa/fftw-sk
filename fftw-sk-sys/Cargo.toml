@@ -1,0 +1,28 @@
+[package]
+name = "fftw-sk-sys"
+version = "0.1.0"
+authors = ["Srinath Kailasa <srinathkailasa@gmail.com>"]
+edition = "2018"
+
+description = "unsafe wrapper of FFTW3"
+keywords = ["fftw"]
+license-file = "../LICENSE.md"
+
+[features]
+default = ["source"]
+system = []
+source = ["fftw-sk-src"]
+
+[dependencies]
+libc = "0.2.142"
+num-complex = "0.4.3"
+
+[dependencies.fftw-sk-src]
+path = "../fftw-sk-src"
+version = "0.1.0"
+optional = true
+
+
+[package.metadata.docs.rs]
+no-default-features = true
+features = ["system"]

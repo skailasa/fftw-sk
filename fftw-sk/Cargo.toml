@@ -1,0 +1,27 @@
+[package]
+name = "fftw-sk"
+version = "0.1.0"
+authors = ["Srinath Kailasa <srinathkailasa@gmail.com>"]
+edition = "2018"
+
+description = "safe wrapper of FFTW3"
+keywords = ["fftw"]
+
+[features]
+default = ["source"]
+system = ["fftw-sk-sys/system"]
+source = ["fftw-sk-sys/source"]
+
+[dependencies]
+bitflags = "2.2.1"
+lazy_static = "1.4.0"
+thiserror = "1.0.40"
+
+[dependencies.fftw-sk-sys]
+path = "../fftw-sk-sys"
+version = "0.1.0"
+default-features = false
+
+[package.metadata.docs.rs]
+no-default-features = true
+features = ["system"]
